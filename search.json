@@ -53,6 +53,6 @@
     "href": "posts/Palmer Penguins Visualization/index.html#plotting-visualization",
     "title": "Palmer Penguins Visualization Post",
     "section": "Plotting Visualization",
-    "text": "Plotting Visualization\nI used Seaborn to plot my visualization. Inputting Culmen Length on the x-axis, Culmen Depth on the y-axis, and Species as the legend indicators.\nimport seaborn as sns\n\n# Create scatterplot using seaborn relpot\nplt = sns.relplot(data=penguins, x=\"Culmen Length (mm)\", y=\"Culmen Depth (mm)\", hue=\"Species\")\n\n# Set title and axis labels\nplt.fig.suptitle(\"Culmen Depth vs. Length by Species\")\nplt.set_axis_labels(\"Culmen Length (mm)\", \"Culmen Depth (mm)\")"
+    "text": "Plotting Visualization\nI used Seaborn to plot my visualization. Inputting Culmen Length on the x-axis, Culmen Depth on the y-axis, and Species as the legend indicators.\n\nimport seaborn as sns\n\n# Create scatterplot using seaborn relpot\nplt = sns.relplot(data=penguins, x=\"Culmen Length (mm)\", y=\"Culmen Depth (mm)\", hue=\"Species\")\n\n# Set title and axis labels\nplt.fig.suptitle(\"Culmen Depth vs. Length by Species\")\nplt.set_axis_labels(\"Culmen Length (mm)\", \"Culmen Depth (mm)\")\n\nC:\\Users\\avajt\\anaconda3\\envs\\PIC16B-25W\\Lib\\site-packages\\seaborn\\axisgrid.py:118: UserWarning:\n\nThe figure layout has changed to tight"
   }
 ]
