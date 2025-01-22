@@ -1,7 +1,7 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
+    "objectID": "posts/Welcome/index.html",
+    "href": "posts/Welcome/index.html",
     "title": "Welcome To My Blog",
     "section": "",
     "text": "This is my first post in a Quarto blog. Welcome!"
@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "myblog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nUCLA Python Course\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\nAva Shafran\n\n\n\n\n\n\nNo matching items"
+    "text": "Palmer Penguins Visualization Post\n\n\n\n\n\n\nHW0\n\n\nweek 2\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\nAva Shafran\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nUCLA Python Course\n\n\n\n\n\n\n\n\n\nJan 21, 2025\n\n\nAva Shafran\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -21,10 +21,38 @@
     "text": "About this blog"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/Palmer Penguins Visualization/index.html",
+    "href": "posts/Palmer Penguins Visualization/index.html",
+    "title": "Palmer Penguins Visualization Post",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "For this visualization using Palmer Penguins data set, I decided to create a scatterplot of the penguins’ Culmen Length vs. Culmen Depth. For an added layer of texture, I wanted to separate them by species to get a more distinct correlation."
+  },
+  {
+    "objectID": "posts/Palmer Penguins Visualization/index.html#introduction",
+    "href": "posts/Palmer Penguins Visualization/index.html#introduction",
+    "title": "Palmer Penguins Visualization Post",
+    "section": "",
+    "text": "For this visualization using Palmer Penguins data set, I decided to create a scatterplot of the penguins’ Culmen Length vs. Culmen Depth. For an added layer of texture, I wanted to separate them by species to get a more distinct correlation."
+  },
+  {
+    "objectID": "posts/Palmer Penguins Visualization/index.html#importing",
+    "href": "posts/Palmer Penguins Visualization/index.html#importing",
+    "title": "Palmer Penguins Visualization Post",
+    "section": "Importing",
+    "text": "Importing\nI started by importing the data set and reading it into the penguins dataframe.\n\nimport pandas as pd\nurl = \"https://raw.githubusercontent.com/pic16b-ucla/24W/main/datasets/palmer_penguins.csv\"\npenguins = pd.read_csv(url)\n\npenguins.head()\n\n\n\n\n\n\n\n\nstudyName\nSample Number\nSpecies\nRegion\nIsland\nStage\nIndividual ID\nClutch Completion\nDate Egg\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDelta 15 N (o/oo)\nDelta 13 C (o/oo)\nComments\n\n\n\n\n0\nPAL0708\n1\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A1\nYes\n11/11/07\n39.1\n18.7\n181.0\n3750.0\nMALE\nNaN\nNaN\nNot enough blood for isotopes.\n\n\n1\nPAL0708\n2\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A2\nYes\n11/11/07\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n8.94956\n-24.69454\nNaN\n\n\n2\nPAL0708\n3\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A1\nYes\n11/16/07\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n8.36821\n-25.33302\nNaN\n\n\n3\nPAL0708\n4\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A2\nYes\n11/16/07\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nAdult not sampled.\n\n\n4\nPAL0708\n5\nAdelie Penguin (Pygoscelis adeliae)\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN3A1\nYes\n11/16/07\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n8.76651\n-25.32426\nNaN"
+  },
+  {
+    "objectID": "posts/Palmer Penguins Visualization/index.html#data-cleaning",
+    "href": "posts/Palmer Penguins Visualization/index.html#data-cleaning",
+    "title": "Palmer Penguins Visualization Post",
+    "section": "Data Cleaning",
+    "text": "Data Cleaning\nNext is to clean the data by getting rid of all non number values and shortening the species’ names.\n\n# Replacing species names with only their first word\npenguins[\"Species\"] = penguins[\"Species\"].str.split().str.get(0) \n\n# Dropping any NaN values in the relevant columns to our visualization\npenguins.dropna(subset=[\"Culmen Length (mm)\"], inplace=True)\npenguins.dropna(subset=[\"Culmen Depth (mm)\"], inplace=True)\n\npenguins.head()\n\n\n\n\n\n\n\n\nstudyName\nSample Number\nSpecies\nRegion\nIsland\nStage\nIndividual ID\nClutch Completion\nDate Egg\nCulmen Length (mm)\nCulmen Depth (mm)\nFlipper Length (mm)\nBody Mass (g)\nSex\nDelta 15 N (o/oo)\nDelta 13 C (o/oo)\nComments\n\n\n\n\n0\nPAL0708\n1\nAdelie\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A1\nYes\n11/11/07\n39.1\n18.7\n181.0\n3750.0\nMALE\nNaN\nNaN\nNot enough blood for isotopes.\n\n\n1\nPAL0708\n2\nAdelie\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN1A2\nYes\n11/11/07\n39.5\n17.4\n186.0\n3800.0\nFEMALE\n8.94956\n-24.69454\nNaN\n\n\n2\nPAL0708\n3\nAdelie\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN2A1\nYes\n11/16/07\n40.3\n18.0\n195.0\n3250.0\nFEMALE\n8.36821\n-25.33302\nNaN\n\n\n4\nPAL0708\n5\nAdelie\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN3A1\nYes\n11/16/07\n36.7\n19.3\n193.0\n3450.0\nFEMALE\n8.76651\n-25.32426\nNaN\n\n\n5\nPAL0708\n6\nAdelie\nAnvers\nTorgersen\nAdult, 1 Egg Stage\nN3A2\nYes\n11/16/07\n39.3\n20.6\n190.0\n3650.0\nMALE\n8.66496\n-25.29805\nNaN"
+  },
+  {
+    "objectID": "posts/Palmer Penguins Visualization/index.html#plotting-visualization",
+    "href": "posts/Palmer Penguins Visualization/index.html#plotting-visualization",
+    "title": "Palmer Penguins Visualization Post",
+    "section": "Plotting Visualization",
+    "text": "Plotting Visualization\nI used Seaborn to plot my visualization. Inputting Culmen Length on the x-axis, Culmen Depth on the y-axis, and Species as the legend indicators.\nimport seaborn as sns\n\n# Create scatterplot using seaborn relpot\nplt = sns.relplot(data=penguins, x=\"Culmen Length (mm)\", y=\"Culmen Depth (mm)\", hue=\"Species\")\n\n# Set title and axis labels\nplt.fig.suptitle(\"Culmen Depth vs. Length by Species\")\nplt.set_axis_labels(\"Culmen Length (mm)\", \"Culmen Depth (mm)\")"
   }
 ]
