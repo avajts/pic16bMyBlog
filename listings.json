@@ -2,6 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Spotify Collaborative Music Generator/index.html",
+      "/posts/Fake News Detector/index.html",
+      "/posts/2D Heat Diffusion Method Comparison/index.html",
+      "/posts/Message Bank using Dash/index.html",
+      "/posts/TMDB Web Scrapping/index.html",
+      "/posts/Climate Database Visualizations/index.html",
       "/posts/Palmer Penguins Visualization/index.html",
       "/posts/Welcome/index.html"
     ]
